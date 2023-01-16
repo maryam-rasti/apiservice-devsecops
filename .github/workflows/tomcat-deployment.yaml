@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-spring-app:
-    name: Build Springboot Application 
+  - name: Build Springboot Application 
     runs-on: ubuntu-latest
     steps:
       - name: Install Java
