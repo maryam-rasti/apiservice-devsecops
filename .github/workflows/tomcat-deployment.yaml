@@ -20,9 +20,11 @@ jobs:
       - name: Verify Java Version
         run: java -version
 
-      # - name: Download the Code
+      - name: Download the Code
+        uses: actions/checkout@v3
 
-      # - name: Build the Code
+      - name: Build the Code
+        uses: ./mvnw package
 
       # - name: Verify the Build is Created or Not
 
