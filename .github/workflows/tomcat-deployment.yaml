@@ -23,6 +23,9 @@ jobs:
       - name: Download the Code
         uses: actions/checkout@v3
 
+      - name: Fix the permissions of mvnw command
+        run: chmod +x mvnw
+
       - name: Build the Code
         uses: ./mvnw package
 
