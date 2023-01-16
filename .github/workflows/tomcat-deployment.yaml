@@ -17,8 +17,8 @@ jobs:
             distribution: 'temurin'
             java-version: '17'
 
-      - name: Verify Java Version
-        run: java -version
+    - name: Verify Java Version
+      run: java -version
 
       # - name: Download the Code 
 
