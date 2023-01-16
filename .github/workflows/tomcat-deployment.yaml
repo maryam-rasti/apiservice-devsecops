@@ -27,7 +27,7 @@ jobs:
         run: chmod +x mvnw
 
       - name: Build the Code
-        uses: ./mvnw package
+        run: ./mvnw package
 
       # - name: Verify the Build is Created or Not
 
