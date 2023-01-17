@@ -30,7 +30,7 @@ jobs:
         run: chmod +x mvnw
 
       - name: Inject GITHUB_RUN_NUMBER into pom.xml
-        run: sed 's/REPLACEVERSIOHVALUEWITHGITHUBVALUE/${{env.GITHUBRUNNUMBER}}/g' pom.xml
+        run: sed -i "s/REPLACEVERSIOHVALUEWITHGITHUBVALUE/${{env.GITHUBRUNNUMBER}}/g" pom.xml
 
       - name: Build the Code
         run: ./mvnw package
