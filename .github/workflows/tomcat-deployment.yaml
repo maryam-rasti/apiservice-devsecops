@@ -36,13 +36,13 @@ jobs:
         run: ls -l target/*.war
 
       - name: Upload Action Artifacts
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3
         with:
-          name: apiservice.war
+          name: apiservice
           path: target/*.war
 
-      
-
+      - name: Verify the Build is Created or Not
+        run: ls -l 
 
   deployment-springboot-app:
     name: Build Springboot Application
@@ -53,7 +53,7 @@ jobs:
       - name: Download the file
         uses: actions/download-artifact@v3
         with:
-          name: apiservice.war
+          name: apiservice
 
       - name: Download the Code
         uses: actions/checkout@v3
