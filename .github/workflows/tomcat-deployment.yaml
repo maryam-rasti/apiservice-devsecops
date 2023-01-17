@@ -38,15 +38,19 @@ jobs:
       - name: Verify the Build is Created or Not
         run: ls -l target/*.war
 
+  deployment-springboot-app:
+    name: deploy Springboot Application
+    runs-on: ubuntu-latest
+    steps:     
       - name: Deploy the Build to Tomcat
-        uses: mdallasanta/ssh-scp-deploy@v1.2.0
-        with:
-          local: './target/apiservice-${{env.GITHUBRUNNUMBER}}.war'                                          
-          remote: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\'                                                
-          host: ${{secrets.HOST}}                                                                          
-          user: ${{secrets.USER}}                                      
-          password: ${{secrets.PASSWORD}}                               
-          pre_upload: echo "This will be executed before the upload!"  
-          post_upload: echo "This will be executed after the upload!" 
-          ssh_options: -o StrictHostKeyChecking=no                     
-          scp_options: -v                                              
+          uses: mdallasanta/ssh-scp-deploy@v1.2.0
+          with:
+            local: './target/apiservice-${{env.GITHUBRUNNUMBER}}.war'                                          
+            remote: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\'                                                
+            host: ${{secrets.HOST}}                                                                          
+            user: ${{secrets.USER}}                                      
+            password: ${{secrets.PASSWORD}}                               
+            pre_upload: echo "This will be executed before the upload!"  
+            post_upload: echo "This will be executed after the upload!" 
+            ssh_options: -o StrictHostKeyChecking=no                     
+            scp_options: -v                                         
