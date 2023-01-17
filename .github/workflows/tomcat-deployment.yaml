@@ -38,8 +38,8 @@ jobs:
       - name: Upload Action Artifacts
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: apiservice-${{github.run_number}}.war
-          path: target/apiservice-${{github.run_number}}.war
+          name: apiservice.war
+          path: target/*.war
 
       - name: Verify the Build is Created or Not
         run: ls -l Artifacts/*.war
