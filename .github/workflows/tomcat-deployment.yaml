@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: myartif
-          path: './target/apiservice-${{github.run_number}}.war'
+          path: 'target/apiservice-${{github.run_number}}.war'
 
       - name: Verify the Build is Created or Not
         run: ls -l target/*.war  
@@ -52,6 +52,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: myartif
+          path: 'target/apiservice-${{github.run_number}}.war'
 
       - run: ls 
 
