@@ -54,6 +54,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: myartif
+          path: target/*.war
+
 
       - name: Download the Code
         uses: actions/checkout@v3
