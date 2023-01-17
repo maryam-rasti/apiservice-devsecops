@@ -52,7 +52,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: myartif
-          path: 'target/apiservice-${{github.run_number}}.war'
+          
 
       - run: ls 
 
