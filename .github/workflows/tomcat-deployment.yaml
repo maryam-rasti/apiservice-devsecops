@@ -38,15 +38,15 @@ jobs:
       - name: Verify the Build is Created or Not
         run: ls -l target/*.war
 
-      - name: Upload file 
-        uses: actions/checkout@v2
-        run: mkdir -p artifact/war-artifact
-        # run: echo ./target/apiservice-${{env.GITHUBRUNNUMBER}}.war > artifact/war-artifact/artifact.war
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact 
-          paths: target/*.war
-        run: ls -l artifact/war-artifact/*.war
+      # - name: Upload file 
+      #   uses: actions/checkout@v2
+      #   run: mkdir -p artifact/war-artifact
+      #   run: echo ./target/apiservice-${{env.GITHUBRUNNUMBER}}.war > artifact/war-artifact/artifact.war
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact 
+      #     paths: target/*.war
+      #   run: ls -l artifact/war-artifact/*.war
 
 
   deployment-springboot-app:
