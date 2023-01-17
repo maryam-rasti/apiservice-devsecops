@@ -38,7 +38,7 @@ jobs:
       - name: Upload Action Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: apiservice
+          name: myartif
           path: target/*.war
 
       - name: Verify the Build is Created or Not
@@ -53,7 +53,7 @@ jobs:
       - name: Download the file
         uses: actions/download-artifact@v3
         with:
-          name: apiservice
+          name: myartif
 
       - name: Download the Code
         uses: actions/checkout@v3
