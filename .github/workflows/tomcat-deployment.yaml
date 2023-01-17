@@ -26,6 +26,9 @@ jobs:
       - name: Fix the permissions of mvnw command
         run: chmod +x mvnw
 
+      - name: Inject GITHUB_RUN_NUMBER into pom.xml
+        run: sed 's/REPLACEVERSIOHVALUEWITHGITHUBVALUE/${{GITHUB_RUN_NUMBER}}' pom.xml
+
       - name: Build the Code
         run: ./mvnw package
 
