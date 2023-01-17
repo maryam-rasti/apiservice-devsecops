@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  GITHUBRUNNUMBER: ${{github.run_number}}
+
 jobs:
   build-springboot-app:
     name: Build Springboot Application
@@ -27,7 +30,7 @@ jobs:
         run: chmod +x mvnw
 
       - name: Inject GITHUB_RUN_NUMBER into pom.xml
-        run: sed 's/REPLACEVERSIOHVALUEWITHGITHUBVALUE/${{github.run_number}}/g' pom.xml
+        run: sed 's/REPLACEVERSIOHVALUEWITHGITHUBVALUE/$GITHUBRUNNUMBER/g' pom.xml
 
       - name: Build the Code
         run: ./mvnw package
