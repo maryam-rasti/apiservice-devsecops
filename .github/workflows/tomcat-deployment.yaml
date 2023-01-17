@@ -41,12 +41,19 @@ jobs:
           name: apiservice.war
           path: target/*.war
 
+      
+
 
   deployment-springboot-app:
     name: Build Springboot Application
     runs-on: ubuntu-latest
     needs: build-springboot-app
     steps:
+
+      - name: Download the file
+        uses: actions/download-artifact@v3
+        with:
+          name: apiservice.war
 
       - name: Download the Code
         uses: actions/checkout@v3
