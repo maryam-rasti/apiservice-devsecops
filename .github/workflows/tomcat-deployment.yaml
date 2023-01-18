@@ -70,4 +70,7 @@ jobs:
           ssh_options: -o StrictHostKeyChecking=no
           scp_options: -v
 
-      
+      management:
+        endopoint:
+          health:
+            show details: always 
