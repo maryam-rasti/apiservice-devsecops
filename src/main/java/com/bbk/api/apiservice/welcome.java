@@ -11,4 +11,10 @@ public class welcome {
 		return"welcome to DevSecOps class";
 	}
 
+	// @GetMapping("/version")
+	// public String welcome() {
+	// 	return"welcome to DevSecOps class";
+	// }
+
+
 }
