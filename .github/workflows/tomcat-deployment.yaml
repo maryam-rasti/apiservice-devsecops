@@ -76,5 +76,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: deployment-springboot-app
     steps:
-      - run: curl -I http://20.228.147.8:8080/apiservice-${{github.run_number}}/actuator/health
+      - run: curl  http://20.228.147.8:8080/apiservice-${{github.run_number}}/actuator/health
 
